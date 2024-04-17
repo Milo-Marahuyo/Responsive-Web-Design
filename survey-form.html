@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>
+      Survey Form
+    </title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 id="title">Shopee Shopper Insights</h1>
+      <p id="description">Join our survey to improve your online shopping! Share your thoughts to shape our site's future and make your shopping journey better.</p>
+      <form id="survey-form" method="post" action="https://register.demo-freecodecamp.org" >
+       <fieldset>
+         <label id="name-label" for="name">Name: <input id="name"
+      type="text" placeholder="name" name="name" required></label>
+        <label for="dropdown">Gender:
+          <select id="dropdown">
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </label>
+        <label id="number-label" for="number">Age: <input id="number" type="number" placeholder="age" name="age" min="18" max="100" required></label>
+        <label id="email-label" for="email">Email: <input id="email" type="email" placeholder="email" name="email" required></label>
+      </fieldset>
+      <fieldset>
+        <legend>How often do use the Shopee App?</legend>
+        <label><input type="radio" value="daily" name="daily">Daily</label>
+        <label><input type="radio" value="weekly" name="weekly">Weekly</label>
+        <label><input type="radio" value="monthly" name="monthly">Monthly</label>
+        <label><input type="radio" value="rarely" name="rarely">Rarely</label>
+        <label><input type="radio" value="never" name="never">Never</label>
+      </fieldset>
+      <fieldset>
+        <legend>What do you primarily use the Shopee app for?</legend>
+        <label><input type="radio" value="buy" name="uses">Buying products</label>
+        <label><input type="radio" value="sell" name="uses">Selling products</label>
+        <label><input type="radio" value="buy-sell" name="uses">Both buying and selling</label>
+      </fieldset>
+      <fieldset>
+        <legend>What types of products do you usually purchase or sell in Shopee app? (Check all that apply)</legend>
+      <label><input type="checkbox" value="type-A" name="type">Electronics and gadgets</lavel>
+      <label><input type="checkbox" value="type-B" name="type">Clothing and accessories</label>
+      <label><input type="checkbox" value="type-C" name="type">Home and kitchen appliances</label>
+      <label><input type="checkbox" value="type-D" name="type">Groceries and household items</label>
+      <label><input type="checkbox" value="type-E" name="type">Beauty and personal care products</label>
+      <label><input type="checkbox" value="type-X" name="type" id="checkBox">Other (please specify):</label>
+      <label><textarea id="textArea" class="hidden" rows="4" cols="40" required></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>How would you rate the customer service provided by Shopee?</legend>
+        <label><input type="radio" name="rating">Excellent</label>
+        <label><input type="radio" name="rating">Good</label>
+        <label><input type="radio" name="rating">Average</label>
+        <label><input type="radio" name="rating">Poor</label>
+    </fieldset>
+    <fieldset>
+      <legend>Suggestions for Improvement:</legend>
+      <label id="suggest">
+        <textarea id="suggest" rows="5" cols="40" placeholder="Any suggestion for how the Shopee can improve its services."></textarea></label>
+        </fieldset>
+      <input id="submit" type="submit" value="Submit" />
+      <script>
+    document.getElementById("checkBox").addEventListener("change", function() {
+        var textArea = document.getElementById("textArea");
+        if (this.checked) {
+            textArea.classList.remove("hidden");
+        } else {
+            textArea.classList.add("hidden");
+        }
+    });
+</script>
+     </form>
+  </body>
+</html>
